@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import FreeLatticesProjectiveLatticesWordCanonicalLaneLean.SublatticeStructure
+import FreeLatticesProjectiveLatticesWordCanonicalLaneLean.ProjectiveLattice
+import FreeLatticesProjectiveLatticesWordCanonicalLaneLean.FreeLatticeWord
+
+open HautevilleHouse.FreeLatticesProjectiveLatticesWordCanonicalLaneLean
+
+namespace HautevilleHouse
+namespace FreeLatticesProjectiveLatticesWordCanonicalLaneLean
+
+def ConstrainedFreeLatticeProjectiveClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_free_lattice_projective_endgame (A : AdmissibleClass) :
+    ConstrainedFreeLatticeProjectiveClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end FreeLatticesProjectiveLatticesWordCanonicalLaneLean
+end HautevilleHouse
